@@ -1,11 +1,9 @@
+
+//Changed indentation to 4 spaces
 public class rajaMantri extends Activity 
 {
-    
-    @Override
-    public void onBackPressed() 
-    {	
-    }
-    
+    //removed unused function onBackPressed
+   
     @Override
     protected void onPostResume() 
     {
@@ -64,7 +62,8 @@ public class rajaMantri extends Activity
     }
 
     String[] solutionArray = { "RAJA", "MANTRI", "CHOR", "SIPAHI"};
-    String[] playersArray = {"Player1", "Player2", "Player3", "Player4"};
+    String[] playersArray = {"PlayerOne", "PlayerTwo", "PlayerThree", "PlayerFour"};
+	//changed player names. As told used One,Two n so on instead of 1,2..
     static String playerOne_name = "" ;
     static String playerTwo_name = "";
     static String playerThree_name = "";
@@ -87,33 +86,34 @@ public class rajaMantri extends Activity
 	
     Button btnRajaMantri;
     Button btnHelp;
-    ImageView btn9;
+	//replaced number by words
+    ImageView btnNine;
     Button btnPlay;
-    static Button btnPod1;
-    static Button btnPod2;
-    static Button btnPod3;
-    static Button btnPod4;
+    static Button btnPodOne;
+    static Button btnPodTwo;
+    static Button btnPodThree;
+    static Button btnPodFour;
     Button btnShowResult;
     Button btnRestart;
     Button btnSignin;
     Button btnGuess;
-    EditText editTxtPlayer1;
-    EditText editTxtPlayer2;
+    EditText editTxtPlayerOne;
+    EditText editTxtPlayerTwo;
     EditText editTxtPlayerThree;
     EditText editTxtPlayerFour;
     EditText edt2;
     EditText edt3;
     EditText edt4;
 	
-    TextView lblPlayer1;
-    TextView lblPlayer2;
-    TextView lblPlayer3;
-    TextView lblPlayer4;
+    TextView lblPlayerOne;
+    TextView lblPlayerTwo;
+    TextView lblPlayerThree;
+    TextView lblPlayerFour;
     static TextView txtTurn;
-    static TextView txtPlayer1;
-    static TextView txtPlayer2;
-    static TextView txtPlayer3;
-    static TextView txtPlayer4;
+    static TextView txtPlayerOne;
+    static TextView txtPlayerTwo;
+    static TextView txtPlayerThree;
+    static TextView txtPlayerFour;
     Bundle savedInstanceState2;
     Button btnMainMenu;
     
@@ -184,24 +184,24 @@ public class rajaMantri extends Activity
 	        // Initiate a generic request to load it with an ad
 	        adView.loadAd(new AdRequest());
 	    
- 		editTxtPlayerOne = (EditText)findViewById(R.id.editTxtPlayer1);
- 		editTxtPlayer2 = (EditText)findViewById(R.id.editTxtPlayer2);
+ 		editTxtPlayerOne = (EditText)findViewById(R.id.editTxtPlayerOne);
+ 		editTxtPlayerTwo = (EditText)findViewById(R.id.editTxtPlayerTwo);
  		editTxtPlayerThree = (EditText)findViewById(R.id.editTxtPlayerThree);
  		editTxtPlayerFour = (EditText)findViewById(R.id.editTxtPlayerFour);
  		
- 		lblPlayer1 = (TextView)findViewById(R.id.lblPlayer1);
- 		lblPlayer2 = (TextView)findViewById(R.id.lblPlayer2);
- 		lblPlayer3 = (TextView)findViewById(R.id.lblPlayer3);
- 		lblPlayer4 = (TextView)findViewById(R.id.lblPlayer4);
+ 		lblPlayerOne = (TextView)findViewById(R.id.lblPlayerOne);
+ 		lblPlayerTwo = (TextView)findViewById(R.id.lblPlayerTwo);
+ 		lblPlayerThree = (TextView)findViewById(R.id.lblPlayerThree);
+ 		lblPlayerFour = (TextView)findViewById(R.id.lblPlayerFour);
  		
  		Display display = getWindowManager().getDefaultDisplay(); 
  		int width = display.getWidth();
  		int height = display.getHeight();
  		
- 		lblPlayer1.setGravity(Gravity.CENTER_HORIZONTAL);
- 		lblPlayer2.setGravity(Gravity.CENTER_HORIZONTAL);
- 		lblPlayer3.setGravity(Gravity.CENTER_HORIZONTAL);
- 		lblPlayer4.setGravity(Gravity.CENTER_HORIZONTAL);
+ 		lblPlayerOne.setGravity(Gravity.CENTER_HORIZONTAL);
+ 		lblPlayerTwo.setGravity(Gravity.CENTER_HORIZONTAL);
+ 		lblPlayerThree.setGravity(Gravity.CENTER_HORIZONTAL);
+ 		lblPlayerFour.setGravity(Gravity.CENTER_HORIZONTAL);
  		
  		Log.v("AkandBakar", "Playernames:" + playerOne_name);
  		Log.v("AkandBakar", "Playernames:" + playerTwo_name);
@@ -254,17 +254,17 @@ public class rajaMantri extends Activity
 			    playersArray[2] = playerThree_name;
 			    playersArray[3] = playerFour_name;
 			 		
-			    txtPlayer1=(TextView)findViewById(R.id.txtPlayer1);
-			    txtPlayer1.setText("1."+playerOne_name+"[" +pOneScore+ "]");	
+			    txtPlayerOne=(TextView)findViewById(R.id.txtPlayerOne);
+			    txtPlayerOne.setText("1."+playerOne_name+"[" +pOneScore+ "]");	
 			    
-			    txtPlayer2=(TextView) findViewById(R.id.txtPlayer2);
-			    txtPlayer2.setText("2."+playerTwo_name+ " [" +pTwoScore+ "]");
+			    txtPlayerTwo=(TextView) findViewById(R.id.txtPlayerTwo);
+			    txtPlayerTwo.setText("2."+playerTwo_name+ " [" +pTwoScore+ "]");
 					
-			    txtPlayer3=(TextView)findViewById(R.id.txtPlayer3);
-			    txtPlayer3.setText("3."+playerThree_name+ " [" +pThreeScore+ "]");
+			    txtPlayerThree=(TextView)findViewById(R.id.txtPlayerThree);
+			    txtPlayerThree.setText("3."+playerThree_name+ " [" +pThreeScore+ "]");
 					
-			    txtPlayer4=(TextView) findViewById(R.id.txtPlayer4);
-		            txtPlayer4.setText("4."+playerFour_name+ " [" +pFourScore+ "]");
+			    txtPlayerFour=(TextView) findViewById(R.id.txtPlayerFour);
+		            txtPlayerFour.setText("4."+playerFour_name+ " [" +pFourScore+ "]");
 					
 			    btnPlay =(Button)findViewById(R.id.btnPlay);
 			    btnPlay.setOnClickListener(new onClickListener() 
@@ -298,58 +298,58 @@ public class rajaMantri extends Activity
        	btnPlay.setText("SHUFFLE");
 	count = 0;
 	btnPlay.setText("SHUFFLE");
-	btnPod1.setClickable(true);
-	btnPod2.setClickable(true);
-	btnPod3.setClickable(true);
-	btnPod4.setClickable(true);
+	btnPodOne.setClickable(true);
+	btnPodTwo.setClickable(true);
+	btnPodThree.setClickable(true);
+	btnPodFour.setClickable(true);
 		
 	if(playerOne.equals("RAJA"))
 	{
-	    btnPod1.setText("RAJA");
-	    btnPod1.setBackgroundResource(R.drawable.podopen);
-	    btnPod1.setClickable(false);
+	    btnPodOne.setText("RAJA");
+	    btnPodOne.setBackgroundResource(R.drawable.podopen);
+	    btnPodOne.setClickable(false);
 	}
 	if(playerTwo.equals("RAJA"))
         {
-	    btnPod2.setText("RAJA");
-	    btnPod2.setBackgroundResource(R.drawable.podopen);
-	    btnPod2.setClickable(false);
+	    btnPodTwo.setText("RAJA");
+	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
+	    btnPodTwo.setClickable(false);
 	}
 	if(playerThree.equals("RAJA"))
 	{
-	    btnPod3.setText("RAJA");
-	    btnPod3.setBackgroundResource(R.drawable.podopen);
-	    btnPod3.setClickable(false);
+	    btnPodThree.setText("RAJA");
+	    btnPodThree.setBackgroundResource(R.drawable.podopen);
+	    btnPodThree.setClickable(false);
 	}
 	if(playerFour.equals("RAJA"))
 	{
-	    btnPod4.setText("RAJA");
-	    btnPod4.setBackgroundResource(R.drawable.podopen);
-	    btnPod4.setClickable(false);
+	    btnPodFour.setText("RAJA");
+	    btnPodFour.setBackgroundResource(R.drawable.podopen);
+	    btnPodFour.setClickable(false);
 	}
 	if(playerOne.equals("MANTRI"))
 	{
-	    btnPod1.setText("MANTRI");
-	    btnPod1.setBackgroundResource(R.drawable.podopen);
-	    btnPod1.setClickable(false);
+	    btnPodOne.setText("MANTRI");
+	    btnPodOne.setBackgroundResource(R.drawable.podopen);
+	    btnPodOne.setClickable(false);
 	}
 	if(playerTwo.equals("MANTRI"))
 	{
-	    btnPod2.setText("MANTRI");
-	    btnPod2.setBackgroundResource(R.drawable.podopen);
-	    btnPod2.setClickable(false);
+	    btnPodTwo.setText("MANTRI");
+	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
+	    btnPodTwo.setClickable(false);
 	}
 	if(playerThree.equals("MANTRI"))
 	{
-	    btnPod3.setText("MANTRI");
-	    btnPod3.setBackgroundResource(R.drawable.podopen);
-	    btnPod3.setClickable(false);
+	    btnPodThree.setText("MANTRI");
+	    btnPodThree.setBackgroundResource(R.drawable.podopen);
+	    btnPodThree.setClickable(false);
 	}
 	if(playerFour.equals("MANTRI"))
 	{
-	    btnPod4.setText("MANTRI");
-	    btnPod4.setBackgroundResource(R.drawable.podopen);
-	    btnPod4.setClickable(false);
+	    btnPodFour.setText("MANTRI");
+	    btnPodFour.setBackgroundResource(R.drawable.podopen);
+	    btnPodFour.setClickable(false);
 	}
 	if(playerOne_role.equals("MANTRI"))
 	{
@@ -367,11 +367,11 @@ public class rajaMantri extends Activity
 	{
 	    txtTurn.setText(playerFour_name + " will find the CHOR!");
 	}		
-	Log.v("AkhandBakar","#########" +btnPod1.getText());
+	Log.v("AkhandBakar","#########" +btnPodOne.getText());
 		
-	if(btnPod1.getText().equals(""))
+	if(btnPodOne.getText().equals(""))
 	{
-	    btnPod1.setOnClickListener(new OnClickListener() 
+	    btnPodOne.setOnClickListener(new OnClickListener() 
 	    {
 		public void onClick(View v) 
 		{
@@ -380,28 +380,28 @@ public class rajaMantri extends Activity
 		    if(playerOne.equals("CHOR"))
 		    {
 		        RajaMantri.guess = true;
-		        btnPod1.setBackgroundResource(R.drawable.podopen);
-		        btnPod1.setText("CHOR");
+		        btnPodOne.setBackgroundResource(R.drawable.podopen);
+		        btnPodOne.setText("CHOR");
 		    }
 		    else
 		    {
 			RajaMantri.guess = false;
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod1.setText("SIPAHI");
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodOne.setText("SIPAHI");
 		    }
-		    btnPod1.setClickable(false);
-		    btnPod2.setClickable(false);
-		    btnPod3.setClickable(false);
-		    btnPod4.setClickable(false);
+		    btnPodOne.setClickable(false);
+		    btnPodTwo.setClickable(false);
+		    btnPodThree.setClickable(false);
+		    btnPodFour.setClickable(false);
 		    updateScore();
 		}
 	    });
 	}	
 		
-	Log.v("AkhandBakar","#########" + btnPod2.getText());
-	if(btnPod2.getText().equals(""))
+	Log.v("AkhandBakar","#########" + btnPodTwo.getText());
+	if(btnPodTwo.getText().equals(""))
 	{
-	    btnPod2.setOnClickListener(new OnClickListener() 
+	    btnPodTwo.setOnClickListener(new OnClickListener() 
 	    {
 	        public void onClick(View v) 
 		{
@@ -410,28 +410,28 @@ public class rajaMantri extends Activity
 		    if(playerTwo.equals("CHOR"))
 		    {
 			RajaMantri.guess = true;
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setText("CHOR");
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setText("CHOR");
 		    }
 		    else
 		    {
 			RajaMantri.guess = false;
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setText("SIPAHI");
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setText("SIPAHI");
 		    }
-		    btnPod1.setClickable(false);
-		    btnPod2.setClickable(false);
-		    btnPod3.setClickable(false);
-		    btnPod4.setClickable(false);
+		    btnPodOne.setClickable(false);
+		    btnPodTwo.setClickable(false);
+		    btnPodThree.setClickable(false);
+		    btnPodFour.setClickable(false);
 		    updateScore();
 		}
 	    });
 	}	
     	
-	Log.v("AkhandBakar","#########" + btnPod3.getText());
-	if(btnPod3.getText().equals(""))
+	Log.v("AkhandBakar","#########" + btnPodThree.getText());
+	if(btnPodThree.getText().equals(""))
 	{
-	    btnPod3.setOnClickListener(new OnClickListener() 
+	    btnPodThree.setOnClickListener(new OnClickListener() 
 	    {
 	        public void onClick(View v) 
 		{
@@ -440,29 +440,29 @@ public class rajaMantri extends Activity
 		    if(playerThree.equals("CHOR"))
 		    {
 			RajaMantri.guess = true;
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setText("CHOR");
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setText("CHOR");
 		    }
 		    else
 		    {
 			RajaMantri.guess = false;
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setText("SIPAHI");
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setText("SIPAHI");
 		    }
-		    btnPod1.setClickable(false);
-		    btnPod2.setClickable(false);
-		    btnPod3.setClickable(false);
-		    btnPod4.setClickable(false);
+		    btnPodOne.setClickable(false);
+		    btnPodTwo.setClickable(false);
+		    btnPodThree.setClickable(false);
+		    btnPodFour.setClickable(false);
 		    updateScore();
 		}
 	    });
 	}
     	
 		
-	Log.v("AkhandBakar","#########" + btnPod4.getText());
-	if(btnPod4.getText().equals(""))
+	Log.v("AkhandBakar","#########" + btnPodFour.getText());
+	if(btnPodFour.getText().equals(""))
 	{
-	    btnPod4.setOnClickListener(new OnClickListener() 
+	    btnPodFour.setOnClickListener(new OnClickListener() 
 	    {
 		public void onClick(View v) 
 		{
@@ -471,19 +471,19 @@ public class rajaMantri extends Activity
 		    if(playerFour.equals("CHOR"))
 		    {
 			RajaMantri.guess = true;
-			btnPod4.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setText("CHOR");
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setText("CHOR");
 		    }
 		    else
                     {
 			RajaMantri.guess = false;
-			btnPod4.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setText("SIPAHI");
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setText("SIPAHI");
 		    }
-		    btnPod1.setClickable(false);
-		    btnPod2.setClickable(false);
-		    btnPod3.setClickable(false);
-		    btnPod4.setClickable(false);
+		    btnPodOne.setClickable(false);
+		    btnPodTwo.setClickable(false);
+		    btnPodThree.setClickable(false);
+		    btnPodFour.setClickable(false);
 		    updateScore();
 		}
 	    });
@@ -497,19 +497,19 @@ public class rajaMantri extends Activity
 	shuffleArray(solutionArray);
 	txtTurn.setText(playerOne_name + "'s" + " turn!");
 	nextTurn = playerTwo_name;
-	btnPod1 = (Button)findViewById(R.id.btnPod1);
-	btnPod1.setBackgroundResource(R.drawable.podtlclosed);
-	btnPod1.setOnClickListener(new OnClickListener() 
+	btnPodOne = (Button)findViewById(R.id.btnPodOne);
+	btnPodOne.setBackgroundResource(R.drawable.podtlclosed);
+	btnPodOne.setOnClickListener(new OnClickListener() 
 	{
 	    public void onClick(View v) 
 	    {
 		// TODO Auto-generated method stub
 		playerOne = solutionArray[0];
-		btnPod1.setText(playerOne);
-		btnPod1.setBackgroundResource(R.drawable.podopen);
-		btnPod2.setClickable(false);
-		btnPod3.setClickable(false);
-		btnPod4.setClickable(false);
+		btnPodOne.setText(playerOne);
+		btnPodOne.setBackgroundResource(R.drawable.podopen);
+		btnPodTwo.setClickable(false);
+		btnPodThree.setClickable(false);
+		btnPodFour.setClickable(false);
 		if(txtTurn.getText().equals(playerOne_name + "'s" + " turn!"))
 	        {
 		    if(playerOne.equals("MANTRI"))
@@ -593,19 +593,19 @@ public class rajaMantri extends Activity
 		}
 					
 		txtTurn.setText("Click again to close the chit!");
-		btnPod1.setOnClickListener(new OnClickListener() {
+		btnPodOne.setOnClickListener(new OnClickListener() {
 						
 		public void onClick(View v) 
 		{
 		    // TODO Auto-generated method stub
-		    btnPod1.setClickable(false);
+		    btnPodOne.setClickable(false);
 		    count++;
-		    btnPod1.setText("");
-		    btnPod1.setBackgroundResource(R.drawable.podtlhalf);
+		    btnPodOne.setText("");
+		    btnPodOne.setBackgroundResource(R.drawable.podtlhalf);
 		    txtTurn.setText(nextTurn);
-		    btnPod2.setClickable(true);
-		    btnPod3.setClickable(true);
-		    btnPod4.setClickable(true);
+		    btnPodTwo.setClickable(true);
+		    btnPodThree.setClickable(true);
+		    btnPodFour.setClickable(true);
 		    if(count == 4)
 		    {
 			txtTurn.setText("Click on Guess!");
@@ -617,19 +617,19 @@ public class rajaMantri extends Activity
 	}
     });
 			
-    btnPod2 = (Button)findViewById(R.id.btnPod2);
-    btnPod2.setBackgroundResource(R.drawable.podtrclosed);
-    btnPod2.setOnClickListener(new OnClickListener() 
+    btnPodTwo = (Button)findViewById(R.id.btnPodTwo);
+    btnPodTwo.setBackgroundResource(R.drawable.podtrclosed);
+    btnPodTwo.setOnClickListener(new OnClickListener() 
     {
         public void onClick(View v) 
         {
 	    // TODO Auto-generated method stub
 	    playerTwo = solutionArray[1];
-	    btnPod2.setText(playerTwo);
-	    btnPod2.setBackgroundResource(R.drawable.podopen);
-	    btnPod1.setClickable(false);
-	    btnPod3.setClickable(false);
-	    btnPod4.setClickable(false);
+	    btnPodTwo.setText(playerTwo);
+	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
+	    btnPodOne.setClickable(false);
+	    btnPodThree.setClickable(false);
+	    btnPodFour.setClickable(false);
 	    if(txtTurn.getText().equals(playerOne_name + "'s" + " turn!"))
             {
                 if(playerTwo.equals("MANTRI"))
@@ -715,18 +715,18 @@ public class rajaMantri extends Activity
 							
 	    }
 	    txtTurn.setText("Click again to close the chit!");
-	    btnPod2.setOnClickListener(new OnClickListener() 
+	    btnPodTwo.setOnClickListener(new OnClickListener() 
 	    {
 		public void onClick(View v) {
 		// TODO Auto-generated method stub
-		btnPod2.setClickable(false);
+		btnPodTwo.setClickable(false);
 		count++;
-		btnPod2.setText("");
-		btnPod2.setBackgroundResource(R.drawable.podtrhalf);
+		btnPodTwo.setText("");
+		btnPodTwo.setBackgroundResource(R.drawable.podtrhalf);
 		txtTurn.setText(nextTurn);
-		btnPod1.setClickable(true);
-		btnPod3.setClickable(true);
-		btnPod4.setClickable(true);
+		btnPodOne.setClickable(true);
+		btnPodThree.setClickable(true);
+		btnPodFour.setClickable(true);
 		if(count == 4){
 		txtTurn.setText("Click on Guess!");
 		btnPlay.setClickable(true);
@@ -737,19 +737,19 @@ public class rajaMantri extends Activity
 	}
 	});
 		        
-	btnPod3 = (Button)findViewById(R.id.btnPod3);
-	btnPod3.setBackgroundResource(R.drawable.podblclosed);
-	btnPod3.setOnClickListener(new OnClickListener() 
+	btnPodThree = (Button)findViewById(R.id.btnPodThree);
+	btnPodThree.setBackgroundResource(R.drawable.podblclosed);
+	btnPodThree.setOnClickListener(new OnClickListener() 
 	{
 	    public void onClick(View v) 
 	    {
 	        // TODO Auto-generated method stub
 		playerThree = solutionArray[2];
-		btnPod3.setText(playerThree);
-		btnPod3.setBackgroundResource(R.drawable.podopen);
-		btnPod2.setClickable(false);
-		btnPod1.setClickable(false);
-		btnPod4.setClickable(false);
+		btnPodThree.setText(playerThree);
+		btnPodThree.setBackgroundResource(R.drawable.podopen);
+		btnPodTwo.setClickable(false);
+		btnPodOne.setClickable(false);
+		btnPodFour.setClickable(false);
 		if(txtTurn.getText().equals(playerOne_name + "'s" + " turn!"))
 		{
 		    if(playerThree.equals("MANTRI"))
@@ -832,19 +832,19 @@ public class rajaMantri extends Activity
 	    }
 
 	    txtTurn.setText("Click again to close the chit!");
-	    btnPod3.setOnClickListener(new OnClickListener() 
+	    btnPodThree.setOnClickListener(new OnClickListener() 
 	    {
 	        public void onClick(View v) 
 		{
 		    // TODO Auto-generated method stub
-		    btnPod3.setClickable(false);
+		    btnPodThree.setClickable(false);
 		    count++;
-		    btnPod3.setText("");
-		    btnPod3.setBackgroundResource(R.drawable.podblhalf);
+		    btnPodThree.setText("");
+		    btnPodThree.setBackgroundResource(R.drawable.podblhalf);
 		    txtTurn.setText(nextTurn);
-		    btnPod2.setClickable(true);
-		    btnPod1.setClickable(true);
-		    btnPod4.setClickable(true);
+		    btnPodTwo.setClickable(true);
+		    btnPodOne.setClickable(true);
+		    btnPodFour.setClickable(true);
 		    if(count == 4)
 		    {
 			txtTurn.setText("Click on Guess!");
@@ -856,19 +856,19 @@ public class rajaMantri extends Activity
 	}
     });
 		     
-    btnPod4 = (Button)findViewById(R.id.btnPod4);
-    btnPod4.setBackgroundResource(R.drawable.podbrclosed);
-    btnPod4.setOnClickListener(new OnClickListener() 
+    btnPodFour = (Button)findViewById(R.id.btnPodFour);
+    btnPodFour.setBackgroundResource(R.drawable.podbrclosed);
+    btnPodFour.setOnClickListener(new OnClickListener() 
     {
 	public void onClick(View v) 
 	{
 	    // TODO Auto-generated method stub
 	    playerFour = solutionArray[3];
-    	    btnPod4.setText(playerFour);
-	    btnPod4.setBackgroundResource(R.drawable.podopen);
-	    btnPod2.setClickable(false);
-	    btnPod3.setClickable(false);
-	    btnPod1.setClickable(false);
+    	    btnPodFour.setText(playerFour);
+	    btnPodFour.setBackgroundResource(R.drawable.podopen);
+	    btnPodTwo.setClickable(false);
+	    btnPodThree.setClickable(false);
+	    btnPodOne.setClickable(false);
 	    if(txtTurn.getText().equals(playerOne_name + "'s" + " turn!"))
 	    {
 		if(playerFour.equals("MANTRI"))
@@ -974,14 +974,14 @@ public class rajaMantri extends Activity
     	        i = i+80;
     		pOneScore=i;
     		txtTurn.setText(playerOne_name+" is right!");
-    		btnPod1.setText(playerOne);
-		btnPod2.setText(playerTwo);
-		btnPod3.setText(playerThree);
-		btnPod4.setText(playerFour);
-		btnPod1.setBackgroundResource(R.drawable.podopen);
-		btnPod2.setBackgroundResource(R.drawable.podopen);
-		btnPod3.setBackgroundResource(R.drawable.podopen);
-		btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+		btnPodTwo.setText(playerTwo);
+		btnPodThree.setText(playerThree);
+		btnPodFour.setText(playerFour);
+		btnPodOne.setBackgroundResource(R.drawable.podopen);
+		btnPodTwo.setBackgroundResource(R.drawable.podopen);
+		btnPodThree.setBackgroundResource(R.drawable.podopen);
+		btnPodFour.setBackgroundResource(R.drawable.podopen);
     		if(playerTwo_role.equals("CHOR"))
     		{
     		    pTwoScore=j;
@@ -1042,14 +1042,14 @@ public class rajaMantri extends Activity
     		i=i-80;
     		pOneScore = i;
     		txtTurn.setText(playerOne_name+" is wrong!");
-    		btnPod1.setText(playerOne);
-		btnPod2.setText(playerTwo);
-		btnPod3.setText(playerThree);
-		btnPod4.setText(playerFour);
-		btnPod1.setBackgroundResource(R.drawable.podopen);
-		btnPod2.setBackgroundResource(R.drawable.podopen);
-		btnPod3.setBackgroundResource(R.drawable.podopen);
-		btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+		btnPodTwo.setText(playerTwo);
+		btnPodThree.setText(playerThree);
+		btnPodFour.setText(playerFour);
+		btnPodOne.setBackgroundResource(R.drawable.podopen);
+		btnPodTwo.setBackgroundResource(R.drawable.podopen);
+		btnPodThree.setBackgroundResource(R.drawable.podopen);
+		btnPodFour.setBackgroundResource(R.drawable.podopen);
 		if(playerTwo_role.equals("CHOR"))
 		{
 		    j = j+25;
@@ -1118,14 +1118,14 @@ public class rajaMantri extends Activity
     		j = j+80;
     		pTwoScore=j;
     		txtTurn.setText(playerTwo_name+" is right!");
-    		btnPod1.setText(playerOne);
-		btnPod2.setText(playerTwo);
-		btnPod3.setText(playerThree);
-		btnPod4.setText(playerFour);
-		btnPod1.setBackgroundResource(R.drawable.podopen);
-		btnPod2.setBackgroundResource(R.drawable.podopen);
-		btnPod3.setBackgroundResource(R.drawable.podopen);
-		btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+		btnPodTwo.setText(playerTwo);
+		btnPodThree.setText(playerThree);
+		btnPodFour.setText(playerFour);
+		btnPodOne.setBackgroundResource(R.drawable.podopen);
+		btnPodTwo.setBackgroundResource(R.drawable.podopen);
+		btnPodThree.setBackgroundResource(R.drawable.podopen);
+		btnPodFour.setBackgroundResource(R.drawable.podopen);
     		if(playerOne_role.equals("CHOR"))
     		{
     		    pOneScore=i;
@@ -1197,14 +1197,14 @@ public class rajaMantri extends Activity
     		j=j-80;
     		pTwoScore = j;
     		txtTurn.setText(playerTwo_name+" is wrong!");
-    		btnPod1.setText(playerOne);
-			btnPod2.setText(playerTwo);
-			btnPod3.setText(playerThree);
-			btnPod4.setText(playerFour);
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+			btnPodTwo.setText(playerTwo);
+			btnPodThree.setText(playerThree);
+			btnPodFour.setText(playerFour);
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1284,14 +1284,14 @@ public class rajaMantri extends Activity
     		k = k+80;
     		pThreeScore = k;
     		txtTurn.setText(playerThree_name+" is right!");
-    		btnPod1.setText(playerOne);
-			btnPod2.setText(playerTwo);
-			btnPod3.setText(playerThree);
-			btnPod4.setText(playerFour);
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+			btnPodTwo.setText(playerTwo);
+			btnPodThree.setText(playerThree);
+			btnPodFour.setText(playerFour);
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
     		if(playerOne_role.equals("CHOR"))
     			{
     			pOneScore=i;
@@ -1367,14 +1367,14 @@ public class rajaMantri extends Activity
     		k = k-80;
     		pThreeScore = k;
     		txtTurn.setText(playerThree_name+" is wrong!");
-    		btnPod1.setText(playerOne);
-			btnPod2.setText(playerTwo);
-			btnPod3.setText(playerThree);
-			btnPod4.setText(playerFour);
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+			btnPodTwo.setText(playerTwo);
+			btnPodThree.setText(playerThree);
+			btnPodFour.setText(playerFour);
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1456,14 +1456,14 @@ public class rajaMantri extends Activity
     		l = l+80;
     		pFourScore=l;
     		txtTurn.setText(playerFour_name+" is right!");
-    		btnPod1.setText(playerOne);
-			btnPod2.setText(playerTwo);
-			btnPod3.setText(playerThree);
-			btnPod4.setText(playerFour);
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+			btnPodTwo.setText(playerTwo);
+			btnPodThree.setText(playerThree);
+			btnPodFour.setText(playerFour);
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
     		if(playerOne_role.equals("CHOR"))
     			{
     			pOneScore=i;
@@ -1535,14 +1535,14 @@ public class rajaMantri extends Activity
     		l = l-80;
     		pFourScore = l;
     		txtTurn.setText(playerFour_name+" is wrong!");
-    		btnPod1.setText(playerOne);
-			btnPod2.setText(playerTwo);
-			btnPod3.setText(playerThree);
-			btnPod4.setText(playerFour);
-			btnPod1.setBackgroundResource(R.drawable.podopen);
-			btnPod2.setBackgroundResource(R.drawable.podopen);
-			btnPod3.setBackgroundResource(R.drawable.podopen);
-			btnPod4.setBackgroundResource(R.drawable.podopen);
+    		btnPodOne.setText(playerOne);
+			btnPodTwo.setText(playerTwo);
+			btnPodThree.setText(playerThree);
+			btnPodFour.setText(playerFour);
+			btnPodOne.setBackgroundResource(R.drawable.podopen);
+			btnPodTwo.setBackgroundResource(R.drawable.podopen);
+			btnPodThree.setBackgroundResource(R.drawable.podopen);
+			btnPodFour.setBackgroundResource(R.drawable.podopen);
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1615,17 +1615,16 @@ public class rajaMantri extends Activity
     	
     
     Log.v("AkhandBakar", "##########Score "+ i);
-	txtPlayer1.setText("1."+ playerOne_name + " [" + i + "]");
-	Log.v("AkhandBakar", playerOne + " [" + i + "]");
+    txtPlayerOne.setText("1."+ playerOne_name + " [" + i + "]");
+    Log.v("AkhandBakar", playerOne + " [" + i + "]");
+    txtPlayerTwo.setText("2." + playerTwo_name+ " [" + j + "]");
 	
-	txtPlayer2.setText("2." + playerTwo_name+ " [" + j + "]");
+    Log.v("AkhandBakar", playerTwo + " [" + pTwoScore + "]");
 	
-	Log.v("AkhandBakar", playerTwo + " [" + pTwoScore + "]");
-	
-	txtPlayer3.setText("3." + playerThree_name+ " [" + k + "]");
-	Log.v("AkhandBakar", playerThree + " [" + pThreeScore + "]");
-	
-	txtPlayer4.setText("4."+playerFour_name+ " [" + l + "]");	
-	Log.v("AkhandBakar", playerFour + " [" + pFourScore + "]");
+    txtPlayerThree.setText("3." + playerThree_name+ " [" + k + "]");
+    Log.v("AkhandBakar", playerThree + " [" + pThreeScore + "]");
+
+    txtPlayerFour.setText("4."+playerFour_name+ " [" + l + "]");	
+    Log.v("AkhandBakar", playerFour + " [" + pFourScore + "]");
     }
 }
