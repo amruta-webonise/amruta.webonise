@@ -93,6 +93,8 @@ public class rajaMantri extends Activity
     static Button btnPodTwo;
     static Button btnPodThree;
     static Button btnPodFour;
+    //created Button temp to use later to reduce redundancy
+    Button temp;
     Button btnShowResult;
     Button btnRestart;
     Button btnSignin;
@@ -305,51 +307,49 @@ public class rajaMantri extends Activity
 		
 	if(playerOne.equals("RAJA"))
 	{
-	    btnPodOne.setText("RAJA");
-	    btnPodOne.setBackgroundResource(R.drawable.podopen);
-	    btnPodOne.setClickable(false);
+	//used a different function to set instead of re-writing
+	// see A*
+
+	    temp=btnPodOne;
+	    temp.setFuncRaja(); //A* called
 	}
 	if(playerTwo.equals("RAJA"))
         {
-	    btnPodTwo.setText("RAJA");
-	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
-	    btnPodTwo.setClickable(false);
+	    temp=btnPodTwo;
+	    temp.setFuncRaja(); //A* called
 	}
 	if(playerThree.equals("RAJA"))
 	{
-	    btnPodThree.setText("RAJA");
-	    btnPodThree.setBackgroundResource(R.drawable.podopen);
-	    btnPodThree.setClickable(false);
+	    temp=btnPodThree;
+	    temp.setFuncRaja(); //A* called
 	}
 	if(playerFour.equals("RAJA"))
 	{
-	    btnPodFour.setText("RAJA");
-	    btnPodFour.setBackgroundResource(R.drawable.podopen);
-	    btnPodFour.setClickable(false);
+	    temp=btnPodFour;
+	    temp.setFuncRaja(); //A* called
 	}
+	 
+	//used a different function to set instead of re-writing
+	// see B*   
 	if(playerOne.equals("MANTRI"))
 	{
-	    btnPodOne.setText("MANTRI");
-	    btnPodOne.setBackgroundResource(R.drawable.podopen);
-	    btnPodOne.setClickable(false);
+	    temp=btnPodOne;
+	    temp.setFuncMantri(); //B* called
 	}
 	if(playerTwo.equals("MANTRI"))
 	{
-	    btnPodTwo.setText("MANTRI");
-	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
-	    btnPodTwo.setClickable(false);
+	    temp=btnPodOne;
+	    temp.setFuncMantri(); //B* called
 	}
 	if(playerThree.equals("MANTRI"))
 	{
-	    btnPodThree.setText("MANTRI");
-	    btnPodThree.setBackgroundResource(R.drawable.podopen);
-	    btnPodThree.setClickable(false);
+	    temp=btnPodOne;
+	    temp.setFuncMantri(); //B* called
 	}
 	if(playerFour.equals("MANTRI"))
 	{
-	    btnPodFour.setText("MANTRI");
-	    btnPodFour.setBackgroundResource(R.drawable.podopen);
-	    btnPodFour.setClickable(false);
+	    temp=btnPodOne;
+	    temp.setFuncMantri(); //B* called
 	}
 	if(playerOne_role.equals("MANTRI"))
 	{
@@ -366,7 +366,24 @@ public class rajaMantri extends Activity
 	if(playerFour_role.equals("MANTRI"))
 	{
 	    txtTurn.setText(playerFour_name + " will find the CHOR!");
-	}		
+	}	
+
+// A* added the above fuctionality here so it is re usable
+	public void setFuncRaja()
+	{
+	    btnPodOne.setText("RAJA");
+	    btnPodOne.setBackgroundResource(R.drawable.podopen);
+	    btnPodOne.setClickable(false);
+	}
+
+// B* added the above fuctionality here so it is re usable
+	public void setFuncMantri()
+	{
+	    btnPodOne.setText("MANTRI");
+	    btnPodOne.setBackgroundResource(R.drawable.podopen);
+	    btnPodOne.setClickable(false);
+	}
+			
 	Log.v("AkhandBakar","#########" +btnPodOne.getText());
 		
 	if(btnPodOne.getText().equals(""))
@@ -389,14 +406,11 @@ public class rajaMantri extends Activity
 			btnPodOne.setBackgroundResource(R.drawable.podopen);
 			btnPodOne.setText("SIPAHI");
 		    }
-		    btnPodOne.setClickable(false);
-		    btnPodTwo.setClickable(false);
-		    btnPodThree.setClickable(false);
-		    btnPodFour.setClickable(false);
-		    updateScore();
+		    //writen a different function setClick() instead of writing the same lines again and again. See C*
+		    setClick(); //C* called
 		}
 	    });
-	}	
+	}
 		
 	Log.v("AkhandBakar","#########" + btnPodTwo.getText());
 	if(btnPodTwo.getText().equals(""))
@@ -419,11 +433,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setBackgroundResource(R.drawable.podopen);
 			btnPodTwo.setText("SIPAHI");
 		    }
-		    btnPodOne.setClickable(false);
-		    btnPodTwo.setClickable(false);
-		    btnPodThree.setClickable(false);
-		    btnPodFour.setClickable(false);
-		    updateScore();
+		    setClick(); //C* called
 		}
 	    });
 	}	
@@ -449,11 +459,7 @@ public class rajaMantri extends Activity
 			btnPodThree.setBackgroundResource(R.drawable.podopen);
 			btnPodThree.setText("SIPAHI");
 		    }
-		    btnPodOne.setClickable(false);
-		    btnPodTwo.setClickable(false);
-		    btnPodThree.setClickable(false);
-		    btnPodFour.setClickable(false);
-		    updateScore();
+		    setClick(); //C* called
 		}
 	    });
 	}
@@ -480,14 +486,20 @@ public class rajaMantri extends Activity
 			btnPodFour.setBackgroundResource(R.drawable.podopen);
 			btnPodFour.setText("SIPAHI");
 		    }
-		    btnPodOne.setClickable(false);
-		    btnPodTwo.setClickable(false);
-		    btnPodThree.setClickable(false);
-		    btnPodFour.setClickable(false);
-		    updateScore();
+		    setClick(); //C* called
 		}
 	    });
-	}	
+	}
+
+//C* Written the functionality here to be re used
+	public void setClick()
+	{
+	    btnPodOne.setClickable(false);
+	    btnPodTwo.setClickable(false);
+	    btnPodThree.setClickable(false);
+	    btnPodFour.setClickable(false);
+	    updateScore();	
+	}
     }
     
     public void shuffle()
@@ -978,10 +990,8 @@ public class rajaMantri extends Activity
 		btnPodTwo.setText(playerTwo);
 		btnPodThree.setText(playerThree);
 		btnPodFour.setText(playerFour);
-		btnPodOne.setBackgroundResource(R.drawable.podopen);
-		btnPodTwo.setBackgroundResource(R.drawable.podopen);
-		btnPodThree.setBackgroundResource(R.drawable.podopen);
-		btnPodFour.setBackgroundResource(R.drawable.podopen);
+		//Write a function setBackground(). See D*
+		setBackground(); //D* called
     		if(playerTwo_role.equals("CHOR"))
     		{
     		    pTwoScore=j;
@@ -1046,10 +1056,7 @@ public class rajaMantri extends Activity
 		btnPodTwo.setText(playerTwo);
 		btnPodThree.setText(playerThree);
 		btnPodFour.setText(playerFour);
-		btnPodOne.setBackgroundResource(R.drawable.podopen);
-		btnPodTwo.setBackgroundResource(R.drawable.podopen);
-		btnPodThree.setBackgroundResource(R.drawable.podopen);
-		btnPodFour.setBackgroundResource(R.drawable.podopen);
+		setBackground(); //D* called
 		if(playerTwo_role.equals("CHOR"))
 		{
 		    j = j+25;
@@ -1122,10 +1129,7 @@ public class rajaMantri extends Activity
 		btnPodTwo.setText(playerTwo);
 		btnPodThree.setText(playerThree);
 		btnPodFour.setText(playerFour);
-		btnPodOne.setBackgroundResource(R.drawable.podopen);
-		btnPodTwo.setBackgroundResource(R.drawable.podopen);
-		btnPodThree.setBackgroundResource(R.drawable.podopen);
-		btnPodFour.setBackgroundResource(R.drawable.podopen);
+		setBackground(); //D* called
     		if(playerOne_role.equals("CHOR"))
     		{
     		    pOneScore=i;
@@ -1201,10 +1205,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setText(playerTwo);
 			btnPodThree.setText(playerThree);
 			btnPodFour.setText(playerFour);
-			btnPodOne.setBackgroundResource(R.drawable.podopen);
-			btnPodTwo.setBackgroundResource(R.drawable.podopen);
-			btnPodThree.setBackgroundResource(R.drawable.podopen);
-			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			setBackground(); //D* called
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1288,10 +1289,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setText(playerTwo);
 			btnPodThree.setText(playerThree);
 			btnPodFour.setText(playerFour);
-			btnPodOne.setBackgroundResource(R.drawable.podopen);
-			btnPodTwo.setBackgroundResource(R.drawable.podopen);
-			btnPodThree.setBackgroundResource(R.drawable.podopen);
-			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			setBackground(); //D* called
     		if(playerOne_role.equals("CHOR"))
     			{
     			pOneScore=i;
@@ -1310,8 +1308,7 @@ public class rajaMantri extends Activity
     				j = j+50;
     				pTwoScore=j;
         			pFourScore=l;
-    				
-    				
+    					
     			}
     			
     			}
@@ -1371,10 +1368,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setText(playerTwo);
 			btnPodThree.setText(playerThree);
 			btnPodFour.setText(playerFour);
-			btnPodOne.setBackgroundResource(R.drawable.podopen);
-			btnPodTwo.setBackgroundResource(R.drawable.podopen);
-			btnPodThree.setBackgroundResource(R.drawable.podopen);
-			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			setBackground(); //D* called
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1460,10 +1454,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setText(playerTwo);
 			btnPodThree.setText(playerThree);
 			btnPodFour.setText(playerFour);
-			btnPodOne.setBackgroundResource(R.drawable.podopen);
-			btnPodTwo.setBackgroundResource(R.drawable.podopen);
-			btnPodThree.setBackgroundResource(R.drawable.podopen);
-			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			setBackground(); //D* called
     		if(playerOne_role.equals("CHOR"))
     			{
     			pOneScore=i;
@@ -1539,10 +1530,7 @@ public class rajaMantri extends Activity
 			btnPodTwo.setText(playerTwo);
 			btnPodThree.setText(playerThree);
 			btnPodFour.setText(playerFour);
-			btnPodOne.setBackgroundResource(R.drawable.podopen);
-			btnPodTwo.setBackgroundResource(R.drawable.podopen);
-			btnPodThree.setBackgroundResource(R.drawable.podopen);
-			btnPodFour.setBackgroundResource(R.drawable.podopen);
+			setBackground(); //D* called
 			if(playerOne_role.equals("CHOR"))
 			{
 				i = i+25;
@@ -1610,8 +1598,15 @@ public class rajaMantri extends Activity
 			
 			}
     		}
-
+//D* Functionality written here to re use
+	public void setBackground()
+	{
+	    btnPodOne.setBackgroundResource(R.drawable.podopen);
+	    btnPodTwo.setBackgroundResource(R.drawable.podopen);
+	    btnPodThree.setBackgroundResource(R.drawable.podopen);
+	    btnPodFour.setBackgroundResource(R.drawable.podopen);
     	}
+    }
     	
     
     Log.v("AkhandBakar", "##########Score "+ i);
